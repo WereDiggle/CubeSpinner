@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/CubeSpinner/static/js/runtime~main.0e25a228.js"
   },
   {
-    "revision": "6c7a5c0f84ac159d7932",
-    "url": "/CubeSpinner/static/js/main.6c7a5c0f.chunk.js"
+    "revision": "06bbfa0bfe277f20ee05",
+    "url": "/CubeSpinner/static/js/main.06bbfa0b.chunk.js"
   },
   {
     "revision": "bf564adab7d6ea9037c7",
     "url": "/CubeSpinner/static/js/2.bf564ada.chunk.js"
   },
   {
-    "revision": "8ae177351b5b9198b87244b086f54fca",
+    "revision": "3fa9248984c8628bef740eca3cbb0e2d",
     "url": "/CubeSpinner/index.html"
   }
 ];

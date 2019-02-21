@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/CubeSpinner/precache-manifest.1b1ef6f50ab25726196a8c5d983ee0c6.js"
+  "/CubeSpinner/precache-manifest.12dd77a37d1b4c97505bf13597f9ec21.js"
 );
 
 workbox.clientsClaim();
