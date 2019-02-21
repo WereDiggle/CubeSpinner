@@ -33,6 +33,8 @@ class CubeForm extends React.Component {
       .then(results => {
           return results.json();
       }).then((data) => {
+          console.log("got initial data")
+          console.log(data)
           this.setState({ 
             color: {
               red: data.red,
@@ -45,6 +47,8 @@ class CubeForm extends React.Component {
               z: data.rotation_z,
             }
           })
+      }).catch((error) => {
+        console.log(error);
       });
   }
 
@@ -74,12 +78,16 @@ class CubeForm extends React.Component {
           return results.json();
       }).then((data) => {
           console.log(data)
+      }).catch((error) => {
+        console.log(error)
       })
   }
 
   render() {
     if (!this.state.color) {
-      return <div />
+      return (
+        <h1>Loading...</h1>
+      )
     }
 
     return (
