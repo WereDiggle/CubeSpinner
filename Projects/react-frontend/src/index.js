@@ -42,9 +42,9 @@ class CubeForm extends React.Component {
               blue: data.blue,
             },
             rotation: {
-              x: data.rotation_x,
-              y: data.rotation_y,
-              z: data.rotation_z,
+              x: parseInt(data.rotation_x),
+              y: parseInt(data.rotation_y),
+              z: parseInt(data.rotation_z),
             }
           })
       }).catch((error) => {
@@ -62,6 +62,8 @@ class CubeForm extends React.Component {
   }
 
   updateCube = () => {
+      console.log("update cube")
+      console.log(this.state)
       fetch('/api/v1/cube', {
           method: 'PUT',
           headers: {'Content-Type': 'application/json'},
@@ -69,9 +71,9 @@ class CubeForm extends React.Component {
             red: this.state.color.red,
             green: this.state.color.green,
             blue: this.state.color.blue,
-            rotation_x: this.state.rotation.x,
-            rotation_y: this.state.rotation.y,
-            rotation_z: this.state.rotation.z,
+            rotation_x: parseInt(this.state.rotation.x),
+            rotation_y: parseInt(this.state.rotation.y),
+            rotation_z: parseInt(this.state.rotation.z),
           })
       })
       .then(results => {
@@ -126,16 +128,25 @@ class RotationSelector extends React.Component {
   }
 
   setX = (event) => {
-    this.setState({x: event.target.value})
-    this.props.setRotation(this.state)
+    var x = event.target.value
+    this.setState({x: x})
+    this.props.setRotation({x: x,
+                            y: this.state.y,
+                            z: this.state.z})
   }
   setY = (event) => {
-    this.setState({y: event.target.value})
-    this.props.setRotation(this.state)
+    var y = event.target.value
+    this.setState({y: y})
+    this.props.setRotation({x: this.state.x, 
+                            y: y,
+                            z: this.state.z})
   }
   setZ = (event) => {
-    this.setState({z: event.target.value})
-    this.props.setRotation(this.state)
+    var z = event.target.value
+    this.setState({z: z})
+    this.props.setRotation({x: this.state.x, 
+                            y: this.state.y,
+                            z: z})
   }
 
   render() {
